@@ -1,9 +1,10 @@
 import streamlit as st
+
 st.set_page_config(page_title="Unit Converter", page_icon="🔄")
 
-# Conversion factors
+# Corrected conversion factors dictionary
 conversion_factors = {
-    "Length ": {
+    "Length": {  # Removed space after "Length"
         "meters": 1, "kilometers": 0.001, "miles": 0.000621371, "feet": 3.28084
     },
     "Weight": {
@@ -42,7 +43,7 @@ st.write("Convert units of Length, Weight, and Temperature easily.")
 category = st.selectbox("Select a category", ["Length", "Weight", "Temperature"])
 
 if category:
-    units = list(conversion_factors[category].keys())
+    units = list(conversion_factors[category].keys())  # No KeyError now
     col1, col2 = st.columns(2)
     
     with col1:
